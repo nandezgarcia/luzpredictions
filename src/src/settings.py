@@ -27,17 +27,20 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL='/admin/login/'
+
 
 # Application definition
 
 INSTALLED_APPS = [
-    'users',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'users',
+    'oauth2_provider',
 ]
 
 MIDDLEWARE = [
@@ -83,6 +86,8 @@ DATABASES = {
             }
        }
    }
+
+AUTH_USER_MODEL='users.User'
 
 
 # Password validation
