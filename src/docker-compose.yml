@@ -13,7 +13,7 @@ services:
       - ./data-db:/data/db
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: mongo$%112admin
+      MONGO_INITDB_ROOT_PASSWORD: mongo_%112admin
       MONGO_INITDB_DATABASE: django_mongodb_docker
     ports:
       - 27017:27017

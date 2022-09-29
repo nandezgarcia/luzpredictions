@@ -85,7 +85,7 @@ DATABASES = {
     'CLIENT': {
             'host': 'mongodb://mongodb:27017',
             'username': 'root',
-            'password': 'mongo$%112admin',
+            'password': 'mongo_%112admin',
             'authSource': 'admin',
             'authMechanism': 'SCRAM-SHA-1',
             }
