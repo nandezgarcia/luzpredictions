@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-4=%q4bfoca@7@#=)7+)3loyzos0#y%8hk2rp%hfp_j!*r&2c=k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 LOGIN_URL='/admin/login/'
 
@@ -80,12 +80,27 @@ WSGI_APPLICATION = 'src.wsgi.application'
 DATABASES = {
        'default': {
             'ENGINE': 'djongo',
-            'NAME': 'djangomongo',
-            'CLIENT': {
-                'host': 'localhost',
+            # 'ENFORCE_SCHEMA': True,
+            'NAME': 'django_mongodb_docker',
+    'CLIENT': {
+            'host': 'mongodb://mongodb:27017',
+            'username': 'root',
+            'password': 'mongo$%112admin',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
             }
        }
    }
+
+# ATABASES = {
+#        'default': {
+#             'ENGINE': 'djongo',
+#             'NAME': 'djangomongo',
+#             'CLIENT': {
+#                 'host': 'localhost',
+#             }
+#        }
+#    }
 
 AUTH_USER_MODEL='users.User'
 
